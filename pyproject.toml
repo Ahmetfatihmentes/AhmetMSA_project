@@ -1,19 +1,31 @@
 [build-system]
-requires = ["setuptools>=61.0"]
+requires = ["setuptools>=61.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
 name = "ahmetmsa"
 version = "1.0.0"
 authors = [
-  { name="Ahmet Fatih Mentes" }
+    { name = "Ahmet Fatih Menteş", email = "mentesahmet57@gmail.com" }
 ]
-description = "Dinamik Programlama Tabanlı Çoklu Dizi Hizalama Kütüphanesi"
+description = "Dinamik Programlama (Needleman-Wunsch) ve UPGMA Guide Tree Tabanlı Çoklu Dizi Hizalama Kütüphanesi"
+readme = "readme.md"
 requires-python = ">=3.7"
+license = { text = "MIT" }
 dependencies = [
     "numpy"
 ]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Topic :: Scientific/Engineering :: Bio-Informatics",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/Ahmetfatihmentes/AhmetMSA_project"
+"Bug Tracker" = "https://github.com/Ahmetfatihmentes/AhmetMSA_project/issues"
 
 [tool.setuptools.packages.find]
 where = ["."]
-include = ["ahmetmsa"]
+include = ["ahmetmsa*"]
