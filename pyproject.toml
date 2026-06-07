@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ahmetmsa"
+version = "1.0.0"
+authors = [
+  { name="Ahmet Fatih Mentes" }
+]
+description = "Dinamik Programlama Tabanlı Çoklu Dizi Hizalama Kütüphanesi"
+requires-python = ">=3.7"
+dependencies = [
+    "numpy"
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["ahmetmsa"]
