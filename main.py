@@ -2,7 +2,7 @@ from ahmetmsa import progressive_alignment
 
 if __name__ == "__main__":
     # Test için örnek diziler
-    test_sequences = ["AATCGCC", "AATGC", "ATCGCC", "AATCG"]
+    test_sequences = ["ACGTACGT", "ACGGTTCGT", "CGTCCGT","ATGCGGTA"]
 
     # Algoritmayı çalıştır
     msa_result, total_score, merge_order, dist_matrix = progressive_alignment(test_sequences)

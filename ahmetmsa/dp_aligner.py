@@ -3,11 +3,13 @@ import numpy as np
 def needleman_wunsch(x, y, match=1, mismatch=-1, gap=-2):
     matrix = np.zeros([len(x)+1, len(y)+1])
 
+    # Başlangıç satır ve sütununu gap cezasıyla doldur
     for i in range(1, len(x)+1):
         matrix[i, 0] = matrix[i-1, 0] + gap
     for j in range(1, len(y)+1):
         matrix[0, j] = matrix[0, j-1] + gap
 
+    # Dinamik programlama matrisini doldur
     for i in range(1, len(x)+1):
         for j in range(1, len(y)+1):
             if x[i-1] == "-" or y[j-1] == "-":
@@ -26,6 +28,7 @@ def traceback(matrix, x, y, match=1, mismatch=-1, gap=-2):
     i, j = len(x), len(y)
     aligned_x, aligned_y = "", ""
 
+    # Matrisin sağ alt köşesinden başlayarak geriye doğru iz sür
     while i > 0 or j > 0:
         if i > 0 and j > 0:
             if x[i-1] == "-" or y[j-1] == "-":
@@ -35,6 +38,7 @@ def traceback(matrix, x, y, match=1, mismatch=-1, gap=-2):
             else:
                 diag_score = mismatch
 
+            # Hangi yönden gelindiğini belirle ve hizalamayı oluştur
             if matrix[i, j] == matrix[i-1, j-1] + diag_score:
                 aligned_x = x[i-1] + aligned_x
                 aligned_y = y[j-1] + aligned_y
