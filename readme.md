@@ -15,7 +15,7 @@ pip install ahmetmsa
 ## Kullanım
 
 ```python
-from ahmetmsa.progressive import progressive_alignment
+from ahmetmsa import progressive_alignment
 
 sequences = ["AATCGCC", "AATGC", "ATCGCC", "AATCG"]
 msa, score, merge_order, _ = progressive_alignment(sequences)

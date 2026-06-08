@@ -1,4 +1,4 @@
-from ahmetmsa.progressive import progressive_alignment
+from ahmetmsa import progressive_alignment
 
 if __name__ == "__main__":
     # Test için örnek diziler
